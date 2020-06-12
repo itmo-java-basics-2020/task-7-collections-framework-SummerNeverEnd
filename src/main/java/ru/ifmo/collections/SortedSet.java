@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 
 
 /**
@@ -23,7 +24,7 @@ import java.util.Iterator;
  * @param <T> set contents type
  */
 public class SortedSet<T> extends AbstractSet<T> {
-    private final TreeMap<T, Object> contents;
+    private final Map<T, Object> contents;
 
     private SortedSet() {
         this.contents = new TreeMap<>();
@@ -46,7 +47,7 @@ public class SortedSet<T> extends AbstractSet<T> {
     }
 
     public List<T> getReversed() {
-        return new ArrayList<T>(contents.descendingKeySet());
+        return new ArrayList<T>(((TreeMap) contents).descendingKeySet());
     }
 
     @Override
