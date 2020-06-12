@@ -16,7 +16,7 @@ public class KthLargest {
     public KthLargest(int k, int[] numbers) {
         this.k = k;
         queue = new PriorityQueue<>();
-        for (int number : numbers) {
+        for (var number : numbers) {
             this.add(number);
         }
     }
